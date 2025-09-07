@@ -2,9 +2,9 @@
 student_grades = {
     "Alice": [85, 90, 78],
     "Bob": [92, 88, 95],
-    "Charlie": [75, 80, 82],
+    "Charlie": [],
     "David": [65, 70, 68],
-    "Esther": [95, 98, 93],
+    "Esther": [100, 100, 100],
 }
 print("Student Grades:")
 print(student_grades)
@@ -14,7 +14,10 @@ print(" ")
 student_averages = {}
 for student, grades in student_grades.items():
     # Calculate the average manually by summing the grades and dividing by the count
-    average = sum(grades) / len(grades)
+    if len(grades) > 0:
+        average = sum(grades) / len(grades)
+    else:
+        average = 0
     student_averages[student] = average
 
 print("1: Student Averages:")
