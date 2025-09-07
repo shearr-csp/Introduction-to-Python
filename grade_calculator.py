@@ -14,6 +14,7 @@ print(" ")
 student_averages = {}
 for student, grades in student_grades.items():
     # Calculate the average manually by summing the grades and dividing by the count
+    # Checks to see if there are any grades in the student_grades dictionary
     if len(grades) > 0:
         average = sum(grades) / len(grades)
     else:
@@ -44,6 +45,7 @@ print(student_letter_grades)
 print(" ")
 
 # 3 Top Performer
+# Creates variables to keep track of the top student
 top_student = None
 highest_average = 0
 
@@ -57,9 +59,11 @@ print(f"The top performer is {top_student} with an average of {highest_average:.
 print(" ")
 
 # 4 Calculate and Display Class Statistics
+# Calculates the overall class average
 overall_average_sum = sum(student_averages.values())
 class_average = overall_average_sum / len(student_averages)
 
+# Counts the number of students passing
 passing_students_count = 0
 for letter_grade in student_letter_grades.values():
     if letter_grade in ["A", "B", "C"]:
