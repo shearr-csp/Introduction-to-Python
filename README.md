@@ -14,6 +14,6 @@ This program has the following features:
 2. Clone repository: Clone this repository to your local computer using Git.
    - git clone [https://github.com/shearr-csp/Introduction-to-Python/blob/main/grade_calculator.py]
 3. Navigate to the project directory:
-   - cd student-grade-calculator
+   - cd Introduction-to-Python
 4. Run the program:
-   - python grade_calculator.py
+   - python3 grade_calculator.py
