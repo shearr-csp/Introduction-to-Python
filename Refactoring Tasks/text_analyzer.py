@@ -7,13 +7,8 @@ def analyze_text(file_name):
     word_list = text_content.lower().split()
     
     # Let's count the occurrences of each word.
-    word_count_dict = {}
-    
-    for word_item in word_list:
-        if word_item in word_count_dict:
-            word_count_dict[word_item] = word_count_dict[word_item] + 1
-        else:
-            word_count_dict[word_item] = 1
+    from collections import Counter
+    word_count_dict = Counter(word_list)
     
     # Now let's find the words with more than 3 characters.
     long_words = [word_element for word_element in word_list if len(word_element) > 3]
