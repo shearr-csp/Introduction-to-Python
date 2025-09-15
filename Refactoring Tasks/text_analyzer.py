@@ -1,26 +1,62 @@
-# unpythonic_analyzer.py
-def analyze_text(file_name):
-    # This function is full of bad practices.
+# refactored_analyzer.py
+from collections import Counter
+
+def read_text_file(file_name):
+    """Reads a file and returns its content as a string."""
     with open(file_name, 'r') as text_file:
-        text_content = text_file.read()
-    
-    word_list = text_content.lower().split()
-    
-    # Let's count the occurrences of each word.
-    from collections import Counter
-    word_count_dict = Counter(word_list)
-    
-    # Now let's find the words with more than 3 characters.
-    long_words = [word_element for word_element in word_list if len(word_element) > 3]
-            
-    print("The total number of words is: " + str(len(word_list)))
-    print("The unique words count is: " + str(len(word_count_dict)))
+        return text_file.read()
+
+def process_text_into_words(text_content):
+    """Converts a string of text into a list of lowercase words."""
+    return text_content.lower().split()
+
+def count_word_frequencies(word_list):
+    """
+    Counts the frequency of each word in a list using 
+    collections.Counter.
+    """
+    return Counter(word_list)
+
+def find_long_words(word_list, min_length=3):
+    """
+    Finds all words in a list that are longer than the specified 
+    minimum length.
+    """
+    return [word for word in word_list if len(word) > min_length]
+
+def print_analysis(word_list, word_count, long_words):
+    """Prints the analysis results to the console."""
+    print(f"The total number of words is: {len(word_list)}")
+    print(f"The unique words count is: {len(word_count)}")
     print("The most frequent words are:")
     
-    for word, count in sorted(word_count_dict.items(), key=lambda item: item[1], reverse=True)[:5]:
+
+    word_counts = Counter(word_list)
+
+    top_5_words = word_counts.most_common(5)
+
+    for word, count in top_5_words:
         print(f"'{word}': {count}")
     
     print(f"Long words (more than 3 characters): {len(long_words)}")
+
+def analyze_text(file_name):
+    """
+    This function analyzes a text file. 
+    To improve modularity, this function calls the different helper 
+    functions to analyze and print results.
+    """
+    # Read and process the text
+    text_content = read_text_file(file_name)
+    word_list = process_text_into_words(text_content)
     
-# You will need to create a text file named 'sample.txt' for testing.
+    # Analyze the processed data
+    word_count = count_word_frequencies(word_list)
+    long_words = find_long_words(word_list)
+    
+    # Print the results
+    print_analysis(word_list, word_count, long_words)
+
+
+# File to have the text analyzed.
 analyze_text("sample.txt")
