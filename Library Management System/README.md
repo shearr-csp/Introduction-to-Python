@@ -28,8 +28,8 @@ the system.
    - git clone [https://github.com/shearr-csp/Introduction-to-Python/tree/main/Library%20Management%20System]
 3. Navigate to the project directory:
    - cd Introduction-to-Python/Library Management System
-      - You might need to put () around Library Management System if you get the 
-        "too many arguments" error. 
+      - You might need to put "" around Library Management System if you get 
+        the "too many arguments" error. 
 4. Run the program:
    - python3 library_manager.py
 
