@@ -20,11 +20,11 @@ The following improvements were made to the original program
 2. Clone repository: Clone this repository to your local computer using Git.
    - git clone [https://github.com/shearr-csp/Introduction-to-Python/tree/main/Robust%20Contact%20Manager]
 3. Navigate to the project directory:
-   - cd Introduction-to-Python/Robust Contact Manager
+   - cd `Introduction-to-Python/Robust Contact Manager`
       - You might need to put "" around Robust Contact Manager if you get 
         the "too many arguments" error. 
 4. Run the main program:
-   - python3 contact_manager.py
+   - `python3 contact_manager.py`
       - The program will display a menu, allowing you to interactively add, 
       find, and delete contacts.
 
@@ -37,7 +37,7 @@ To run the full test suite:
 1. Open your terminal or command prompt.
 
 2. Execute the `unittest` module against the test file:
-   - python3 -m unittest test_contact_manager.py
+   - `python3 -m unittest test_contact_manager.py`
 
 ### Purpose of Key Tests
 
