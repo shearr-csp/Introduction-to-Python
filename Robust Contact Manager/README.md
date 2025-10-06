@@ -11,16 +11,9 @@ The following improvements were made to the original program
 
 | **Bug** | **Fix** | 
 | ----- | ----- | 
-| **Program Crash on Missing Contact (Find/Delete)** | Implemented 
-`try/except KeyError` blocks in both `find_contact` and `delete_contact` to 
-gracefully handle lookups and deletions of non-existent names. | 
-| **Duplicate Contacts Allowed** | Created the custom exception 
-**`DuplicateContactError`**. The `add_contact` function now checks for existing 
-contacts and explicitly `raise`s this error. | 
-| **Program Crash on Invalid Menu Input** | Implemented a 
-`try/except ValueError` block in the `main` loop to handle non-integer input 
-when the user selects a menu option, prompting them to try again instead of 
-crashing. | 
+| **Program Crash on Missing Contact (Find/Delete)** | Implemented `try/except KeyError` blocks in both `find_contact` and `delete_contact` to gracefully handle lookups and deletions of non-existent names. | 
+| **Duplicate Contacts Allowed** | Created the custom exception **`DuplicateContactError`**. The `add_contact` function now checks for existing contacts and explicitly `raise`s this error. The `main` function catches this error to inform the user. | 
+| **Program Crash on Invalid Menu Input** | Implemented a `try/except ValueError` block in the `main` loop to handle non-integer input when the user selects a menu option, prompting them to try again instead of crashing. | 
 
 ## How to Run the Program
 1. To run this program: Ensure that you have Python 3 installed on your system.
